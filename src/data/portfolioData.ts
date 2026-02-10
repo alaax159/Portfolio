@@ -73,11 +73,11 @@ export const experiences: Experience[] = [
         title: "Boot.dev Intern Trainee",
         date: "Feb 2026 – Present",
         bullets: [
-            "Selected for the competitive Boot.dev Stage internship training program.",
-            "Following a structured software engineering learning roadmap.",
-            "Completing hands-on technical projects and coding assignments.",
-            "Progress tracked and evaluated based on performance and consistency.",
-            "Preparing for technical interview selection for the paid on-site internship.",
+            "Selected for the competitive Boot.dev TypeScript Internship Training Program.",
+            "Following a structured engineering roadmap covering Git, TypeScript, HTTP clients/servers, SQL, and Docker.",
+            "Building hands-on projects including a Pokédex application and a Blog Aggregator in TypeScript.",
+            "Gaining practical experience in CI/CD using GitHub Actions and containerization with Docker.",
+            "Training progress tracked through weekly milestones, project delivery, and technical evaluations.",
         ],
     },
 ];
