@@ -1,19 +1,10 @@
 import { useState } from 'react';
-import { experiences, education } from '../data/portfolioData';
+import { experiences } from '../data/portfolioData';
 
 const Experience: React.FC = () => {
     const [activeTab, setActiveTab] = useState(0);
 
-    // Merge experiences + education entries into tab list
-    const allEntries = [
-        ...experiences,
-        ...education.map((edu) => ({
-            company: edu.school,
-            title: edu.degree,
-            date: edu.date,
-            bullets: edu.note ? [edu.note] : [],
-        })),
-    ];
+    const allEntries = experiences;
 
     const active = allEntries[activeTab];
 

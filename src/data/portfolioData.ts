@@ -18,6 +18,13 @@ export interface Experience {
     bullets: string[];
 }
 
+export interface Certification {
+    issuer: string;
+    title: string;
+    date: string;
+    bullets: string[];
+}
+
 export interface Education {
     school: string;
     degree: string;
@@ -59,9 +66,26 @@ export const skills: string[] = [
 ];
 
 // ── Experience ─────────────────────────────────
+// ── Experience ─────────────────────────────────
 export const experiences: Experience[] = [
     {
-        company: "Udacity",
+        company: "Foothill Technology Solutions",
+        title: "Boot.dev Intern Trainee",
+        date: "Feb 2026 – Present",
+        bullets: [
+            "Selected for the competitive Boot.dev Stage internship training program.",
+            "Following a structured software engineering learning roadmap.",
+            "Completing hands-on technical projects and coding assignments.",
+            "Progress tracked and evaluated based on performance and consistency.",
+            "Preparing for technical interview selection for the paid on-site internship.",
+        ],
+    },
+];
+
+// ── Certifications ─────────────────────────────
+export const certifications: Certification[] = [
+    {
+        issuer: "Udacity",
         title: "AI Programming with Python Nanodegree",
         date: "June 2025 – August 2025",
         bullets: [
@@ -71,7 +95,7 @@ export const experiences: Experience[] = [
         ],
     },
     {
-        company: "The Hope International",
+        issuer: "The Hope International",
         title: "Front-End Development Training",
         date: "August 2024 – October 2024",
         bullets: [

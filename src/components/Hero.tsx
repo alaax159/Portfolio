@@ -1,19 +1,18 @@
 import { personalInfo } from '../data/portfolioData';
+import PixelPortrait from './PixelPortrait';
 
 const Hero: React.FC = () => {
     return (
         <section id="home" className="hero">
             <div className="hero-content">
-                {/* ASCII-style profile silhouette */}
+                {/* Pixel-art profile from actual photo */}
                 <div className="hero-ascii">
-                    <div className="ascii-silhouette">
-                        <img
-                            src={personalInfo.profileImage}
-                            alt={personalInfo.name}
-                        />
-                        <div className="dot-grid"></div>
-                        <div className="ascii-overlay"></div>
-                    </div>
+                    <PixelPortrait
+                        src={personalInfo.profileImage}
+                        width={280}
+                        height={320}
+                        pixelSize={5}
+                    />
                 </div>
 
                 {/* Text side */}
