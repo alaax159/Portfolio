@@ -20,6 +20,11 @@ _Avoid_: developer, technical user
 
 ### Work
 
+**Work**:
+Everything the candidate has built, taken together: the union of Projects and
+Coursework. The only term that legitimately covers both.
+_Avoid_: projects, portfolio
+
 **Project**:
 Self-directed work that was built and shipped, owned end to end rather than assigned.
 _Avoid_: app, repo, portfolio piece

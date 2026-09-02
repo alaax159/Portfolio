@@ -37,12 +37,12 @@ const Navbar: React.FC = () => {
             </div>
 
             <a
-                className="nav-resume"
-                href={personalInfo.resumeLink}
+                className="nav-cv"
+                href={personalInfo.cvLink}
                 target="_blank"
                 rel="noreferrer"
             >
-                Resume
+                CV
             </a>
 
             <div className="nav-social-icons">

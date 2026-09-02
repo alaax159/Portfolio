@@ -4,9 +4,9 @@
 // Credential and Experience are not interchangeable.
 // ──────────────────────────────────────────────
 
-import type { WorkKind } from './partitionWork';
+import { partitionWork, type WorkKind } from './partitionWork';
 
-export interface Project {
+export interface WorkEntry {
     title: string;
     description: string;
     techs: string[];
@@ -14,6 +14,8 @@ export interface Project {
     external?: string;
     featured?: boolean;
     kind: WorkKind;
+    /** Set while the canonical URL is unknown; the repo link is withheld. */
+    linkPending?: boolean;
 }
 
 export interface Experience {
@@ -48,7 +50,7 @@ export const personalInfo = {
     location: "Palestine, Ramallah",
     profileImage: "https://i.postimg.cc/3db49LsW/image.webp",
     // Served from public/ — BASE_URL keeps it correct under the '/Portfolio/' base.
-    resumeLink: `${import.meta.env.BASE_URL}Alaa_Faraj_CV.pdf`,
+    cvLink: `${import.meta.env.BASE_URL}Alaa_Faraj_CV.pdf`,
     social: {
         github: "https://github.com/alaax159",
         linkedin: "https://www.linkedin.com/in/alaa-faraj-2b26a2209/",
@@ -126,14 +128,14 @@ export const education: Education[] = [
 // ── Work ───────────────────────────────────────
 // Projects are self-directed and shipped; Coursework was scoped by an
 // assigned brief. Both live here and are split by partitionWork().
-export const projects: Project[] = [
+export const work: WorkEntry[] = [
     {
         title: "OffPI — Offline Emergency Communication System",
         description:
             "A fully offline emergency communication platform built at a 48-hour hackathon, combining an iOS app with Raspberry Pi edge nodes over LoRa long-range radio. Implements P2P mesh networking, store-and-forward buffering, and on-device AI inference for emergency classification.",
         techs: ["iOS", "Raspberry Pi", "LoRa", "Mesh Networking", "Edge AI"],
-        // TODO: replace with the real Devpost/GitHub link for OffPI.
         github: "https://github.com/alaax159",
+        linkPending: true,
         featured: true,
         kind: "project",
     },
@@ -160,8 +162,8 @@ export const projects: Project[] = [
         description:
             "A multimodal time-of-day classifier (morning/afternoon/evening) comparing three approaches: a KNN baseline on handcrafted colour features, a CNN using EfficientNetV2-L transfer learning at 87.4% test accuracy, and a RoBERTa transformer over text descriptions at 76.4%. Improved overall F1-score by 12% over the KNN baseline.",
         techs: ["Python", "TensorFlow", "Keras", "RoBERTa", "EfficientNetV2", "scikit-learn"],
-        // TODO: replace with the real GitHub link for this project.
         github: "https://github.com/alaax159",
+        linkPending: true,
         kind: "project",
     },
     {
@@ -245,6 +247,10 @@ export const projects: Project[] = [
         kind: "coursework",
     },
 ];
+
+// Partitioned once, at the source. Components consume these, never `work`,
+// so the two sections can never disagree about what is Coursework.
+export const { projects, coursework } = partitionWork(work);
 
 // ── Navigation Links ───────────────────────────
 export const navLinks = [

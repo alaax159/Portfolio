@@ -1,5 +1,4 @@
-import { projects as allWork } from '../data/portfolioData';
-import { partitionWork } from '../data/partitionWork';
+import { projects } from '../data/portfolioData';
 
 const GithubIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -14,7 +13,6 @@ const FolderIcon = () => (
 );
 
 const Projects: React.FC = () => {
-    const { projects } = partitionWork(allWork);
     const featured = projects.filter((p) => p.featured);
     const other = projects.filter((p) => !p.featured);
 
@@ -40,11 +38,13 @@ const Projects: React.FC = () => {
                                 <span key={t}>{t}</span>
                             ))}
                         </div>
-                        <div className="featured-links">
-                            <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                                <GithubIcon />
-                            </a>
-                        </div>
+                        {!project.linkPending && (
+                            <div className="featured-links">
+                                <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                                    <GithubIcon />
+                                </a>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -57,11 +57,13 @@ const Projects: React.FC = () => {
                             <span className="project-card-folder">
                                 <FolderIcon />
                             </span>
-                            <div className="project-card-links">
-                                <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                                    <GithubIcon />
-                                </a>
-                            </div>
+                            {!project.linkPending && (
+                                <div className="project-card-links">
+                                    <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                                        <GithubIcon />
+                                    </a>
+                                </div>
+                            )}
                         </div>
                         <h3 className="project-card-title">{project.title}</h3>
                         <p className="project-card-desc">{project.description}</p>

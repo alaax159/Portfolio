@@ -1,9 +1,6 @@
-import { projects as allWork } from '../data/portfolioData';
-import { partitionWork } from '../data/partitionWork';
+import { coursework } from '../data/portfolioData';
 
 const Coursework: React.FC = () => {
-    const { coursework } = partitionWork(allWork);
-
     if (coursework.length === 0) return null;
 
     return (
@@ -15,7 +12,7 @@ const Coursework: React.FC = () => {
                 </summary>
 
                 <p className="coursework-note">
-                    Assignments and course projects, kept for completeness.
+                    Work built to a brief set by a course, kept here for completeness.
                 </p>
 
                 <ul className="coursework-list">
