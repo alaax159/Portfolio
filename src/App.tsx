@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
+import Coursework from './components/Coursework';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { personalInfo } from './data/portfolioData';
@@ -54,6 +55,7 @@ const App: React.FC = () => {
         <Education />
         <Certifications />
         <Projects />
+        <Coursework />
         <Contact />
       </main>
 

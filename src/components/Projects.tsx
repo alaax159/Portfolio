@@ -1,4 +1,5 @@
-import { projects } from '../data/portfolioData';
+import { projects as allWork } from '../data/portfolioData';
+import { partitionWork } from '../data/partitionWork';
 
 const GithubIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -13,6 +14,7 @@ const FolderIcon = () => (
 );
 
 const Projects: React.FC = () => {
+    const { projects } = partitionWork(allWork);
     const featured = projects.filter((p) => p.featured);
     const other = projects.filter((p) => !p.featured);
 

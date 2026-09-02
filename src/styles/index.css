@@ -1135,3 +1135,135 @@ button {
     display: none;
   }
 }
+/* ══════════════════════════════════════════════
+   RESUME BUTTONS
+   ══════════════════════════════════════════════ */
+
+.hero-cta-secondary {
+  margin-left: 12px;
+  border-color: var(--lightest-navy);
+  color: var(--lightest-slate);
+}
+
+.hero-cta-secondary:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background-color: var(--green-tint);
+}
+
+.nav-resume {
+  padding: 8px 16px;
+  margin-left: 4px;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs, 13px);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.nav-resume:hover {
+  background-color: var(--green-tint);
+}
+
+/* ══════════════════════════════════════════════
+   COURSEWORK
+   ══════════════════════════════════════════════ */
+
+.coursework-details {
+  border-top: 1px solid var(--lightest-navy);
+  padding-top: 24px;
+}
+
+.coursework-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--light-slate);
+  transition: var(--transition);
+}
+
+.coursework-summary::-webkit-details-marker {
+  display: none;
+}
+
+.coursework-summary::after {
+  content: '+';
+  margin-left: 4px;
+  color: var(--green);
+  font-size: 1.2em;
+}
+
+.coursework-details[open] .coursework-summary::after {
+  content: '−';
+}
+
+.coursework-summary:hover {
+  color: var(--green);
+}
+
+.coursework-count {
+  color: var(--slate);
+}
+
+.coursework-note {
+  margin: 16px 0 12px;
+  font-size: var(--fs-sm);
+  color: var(--slate);
+}
+
+.coursework-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coursework-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-navy);
+}
+
+.coursework-item a {
+  color: var(--lightest-slate);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.coursework-item a:hover {
+  color: var(--green);
+}
+
+.coursework-techs {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--slate);
+}
+
+@media (max-width: 768px) {
+  .nav-resume {
+    display: none;
+  }
+
+  /* inline-flex siblings share a line and JSX strips the whitespace between
+     them, so margin-top alone would leave the two CTAs flush. Going
+     block-level is what actually stacks them. */
+  .hero-cta {
+    display: flex;
+    width: fit-content;
+  }
+
+  .hero-cta-secondary {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}

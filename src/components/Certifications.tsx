@@ -1,4 +1,4 @@
-import { certifications } from '../data/portfolioData';
+import { credentials } from '../data/portfolioData';
 
 const Certifications: React.FC = () => {
     return (
@@ -8,7 +8,7 @@ const Certifications: React.FC = () => {
             </h2>
 
             <div className="cert-cards">
-                {certifications.map((cert, idx) => (
+                {credentials.map((cert, idx) => (
                     <div key={idx} className="cert-card">
                         <header className="cert-header">
                             <h3 className="cert-title">{cert.title}</h3>
