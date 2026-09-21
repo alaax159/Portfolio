@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { navLinks, personalInfo } from '../data/portfolioData';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -20,8 +21,9 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-            <a href="#home" className="nav-logo">
-                <span>&lt;</span> {personalInfo.shortName} <span>/&gt;</span>
+            <a href="#home" className="nav-logo" aria-label={`${personalInfo.shortName} — home`}>
+                <Logo />
+                <span className="nav-logo-name">{personalInfo.shortName}</span>
             </a>
 
             <div className={`nav-links${menuOpen ? ' open' : ''}`}>
