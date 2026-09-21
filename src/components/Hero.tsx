@@ -34,6 +34,7 @@ const Hero: React.FC = () => {
                     <a
                         href={personalInfo.cvLink}
                         className="hero-cta hero-cta-secondary"
+                        download="Alaa_Faraj_CV.pdf"
                         target="_blank"
                         rel="noreferrer"
                     >

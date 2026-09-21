@@ -12,7 +12,7 @@ const About: React.FC = () => {
                     <p>
                         I am a <span className="highlight">Computer Engineering</span> student at{' '}
                         <span className="highlight">Birzeit University</span> with a GPA of{' '}
-                        <span className="highlight">82.9%</span>, graduating in 2027. I have a strong foundation in
+                        <span className="highlight">81.1%</span>, graduating in 2027. I have a strong foundation in
                         software development, machine learning, and computer architecture.
                     </p>
                     <p>

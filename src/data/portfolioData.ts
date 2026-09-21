@@ -139,7 +139,7 @@ export const education: Education[] = [
         school: "Birzeit University",
         degree: "Bachelor of Computer Engineering",
         date: "Sep 2022 – Jun 2027 (expected)",
-        note: "Ramallah, Palestine · GPA: 82.9%",
+        note: "Ramallah, Palestine · GPA: 81.1%",
     },
     {
         school: "Al-Hashimiya Secondary School for Boys",

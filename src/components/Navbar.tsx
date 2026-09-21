@@ -39,6 +39,7 @@ const Navbar: React.FC = () => {
             <a
                 className="nav-cv"
                 href={personalInfo.cvLink}
+                download="Alaa_Faraj_CV.pdf"
                 target="_blank"
                 rel="noreferrer"
             >
