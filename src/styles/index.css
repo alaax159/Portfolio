@@ -1451,3 +1451,9 @@ button {
 .playing-section .section-heading {
   white-space: normal;
 }
+
+/* The portrait's tint is baked into the canvas draw, so it can't follow
+   the tokens. A filter pushes it from cyan to amber instead. */
+:root.arcade .pixel-portrait-canvas {
+  filter: sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(1.05);
+}
