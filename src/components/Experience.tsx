@@ -37,7 +37,10 @@ const Experience: React.FC = () => {
                     <h3 className="exp-panel-title">
                         {active.title} <span className="company-name">@ {active.company}</span>
                     </h3>
-                    <p className="exp-panel-date">{active.date}</p>
+                    <p className="exp-panel-date">
+                        {active.date}
+                        {active.location ? ` · ${active.location}` : ''}
+                    </p>
                     <ul className="exp-panel-bullets">
                         {active.bullets.map((b, i) => (
                             <li key={i}>{b}</li>

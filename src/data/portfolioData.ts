@@ -2,6 +2,7 @@
 // Central data store for the portfolio
 // Vocabulary is defined in CONTEXT.md — Project, Coursework,
 // Credential and Experience are not interchangeable.
+// Source of truth for the facts below: public/Alaa_Faraj_CV.pdf
 // ──────────────────────────────────────────────
 
 import { partitionWork, type WorkKind } from './partitionWork';
@@ -22,6 +23,7 @@ export interface Experience {
     company: string;
     title: string;
     date: string;
+    location?: string;
     bullets: string[];
 }
 
@@ -44,10 +46,11 @@ export const personalInfo = {
     name: "Alaa Emad Faraj",
     shortName: "Alaa Faraj",
     title: "Computer Engineering Student",
-    bio: `I'm a Computer Engineering student at Birzeit University with a strong foundation in software development, machine learning, and system design. I love building things that live on the internet — from full-stack web apps to deep learning classifiers and hardware processors.`,
+    bio: `I'm a Computer Engineering student at Birzeit University with hands-on experience building and evaluating AI systems — RAG pipelines, backend services and machine learning models — through an AI engineering internship and independent work. I work across Python and TypeScript stacks, and I care as much about how a system is evaluated as about getting it to run.`,
     email: "alaaemadf4@gmail.com",
-    phone: "+972(594528583)",
-    location: "Palestine, Ramallah",
+    phone: "+970 594 528 583",
+    location: "Ramallah, Palestine",
+    languages: "Arabic (Native) · English (B2 Upper Intermediate, EFSET Certified)",
     profileImage: "https://i.postimg.cc/3db49LsW/image.webp",
     // Served from public/ — BASE_URL keeps it correct under the '/Portfolio/' base.
     cvLink: `${import.meta.env.BASE_URL}Alaa_Faraj_CV.pdf`,
@@ -60,27 +63,39 @@ export const personalInfo = {
 // ── Skills ─────────────────────────────────────
 export const skills: string[] = [
     "Python",
+    "TypeScript",
     "JavaScript",
     "Java",
     "C",
-    "TypeScript",
-    "MySQL",
-    "HTML / CSS",
-    "FastAPI",
+    "SQL",
     "TensorFlow",
-    "Verilog",
-    "Linux",
-    "MATLAB",
+    "PyTorch",
+    "Keras",
+    "HuggingFace Transformers",
+    "scikit-learn",
+    "RAG & Vector Search",
+    "NestJS",
+    "FastAPI",
+    "PostgreSQL / pgvector",
+    "MySQL",
+    "Redis & BullMQ",
+    "Docker",
+    "Azure AI Foundry",
+    "Git",
 ];
 
 // ── Experience ─────────────────────────────────
 export const experiences: Experience[] = [
     {
-        company: "ASAL Technologies — Microsoft Team",
-        title: "Artificial Intelligence Engineer",
-        date: "July 2026 – Present",
+        company: "ASAL Technologies",
+        title: "Artificial Intelligence Engineer — Internship",
+        date: "July 2026 – September 2026",
+        location: "Rawabi, West Bank (Hybrid)",
         bullets: [
-            "Working as an AI Engineer within the Microsoft team, building production applications and AI-driven features.",
+            "Designed and evaluated a RAG pipeline over FDA DailyMed drug labels: pgvector search with SQL-level filtering that scopes evidence to each patient's own medications, versioned embedding profiles, and an audited Azure AI Foundry gateway.",
+            "Built the grounding guardrails: every AI answer is citation-validated against retrieved source text and can never override the deterministic checker — the same ungrounded-claim and forced-inference failures quality review must catch.",
+            "Implemented a deterministic medication-safety engine (DDInter drug–drug interactions, allergy checks) with immutable runs, and added prescription scanning via Azure Document Intelligence OCR.",
+            "Built the backend end to end: NestJS/TypeScript REST APIs, PostgreSQL with Drizzle ORM, Redis/BullMQ job queues, and Docker.",
         ],
     },
 ];
@@ -88,13 +103,22 @@ export const experiences: Experience[] = [
 // ── Credentials ────────────────────────────────
 export const credentials: Credential[] = [
     {
-        issuer: "Udacity",
-        title: "AI Programming with Python Nanodegree",
-        date: "June 2025 – August 2025",
+        issuer: "Udacity — Palestine Launchpad",
+        title: "Intro to Machine Learning with TensorFlow (Nanodegree)",
+        date: "March 2026",
         bullets: [
-            "Built a complete Image Classifier with Deep Learning using TensorFlow, trained on the Oxford 102 Flower Categories Dataset.",
+            "Completed the nanodegree covering supervised learning, neural networks with TensorFlow, and unsupervised learning.",
+            "Worked through model evaluation and error analysis on real datasets, not aggregate accuracy alone.",
+        ],
+    },
+    {
+        issuer: "Udacity",
+        title: "AI Programming with Python & TensorFlow (Nanodegree)",
+        date: "July 2025",
+        bullets: [
+            "Built a complete image classifier with deep learning using TensorFlow, trained on the Oxford 102 Flower Categories dataset.",
             "Applied transfer learning with pre-trained CNNs, data augmentation, model evaluation, and checkpointing.",
-            "Optimized the neural network for high classification accuracy across 102 flower categories.",
+            "Optimised the neural network for high classification accuracy across 102 flower categories.",
         ],
     },
     {
@@ -114,8 +138,8 @@ export const education: Education[] = [
     {
         school: "Birzeit University",
         degree: "Bachelor of Computer Engineering",
-        date: "Expected Graduation: 2027",
-        note: "GPA: 82.9%",
+        date: "Sep 2022 – Jun 2027 (expected)",
+        note: "Ramallah, Palestine · GPA: 82.9%",
     },
     {
         school: "Al-Hashimiya Secondary School for Boys",
@@ -129,6 +153,15 @@ export const education: Education[] = [
 // Projects are self-directed and shipped; Coursework was scoped by an
 // assigned brief. Both live here and are split by partitionWork().
 export const work: WorkEntry[] = [
+    {
+        title: "Moeen — AI Medication Management Platform",
+        description:
+            "A mobile app and backend that track prescriptions and doses, check drug interactions and allergies, and answer medication questions with cited, label-grounded AI guidance. Built during the ASAL Technologies internship: a RAG pipeline over FDA DailyMed labels with pgvector retrieval scoped to each patient's own medications, citation validation on every answer, and a deterministic medication-safety engine the model can never override.",
+        techs: ["NestJS", "TypeScript", "PostgreSQL + pgvector", "Drizzle ORM", "BullMQ", "Azure AI Foundry", "Docker"],
+        github: "https://github.com/alaax159/Moeen",
+        featured: true,
+        kind: "project",
+    },
     {
         title: "OffPI — Offline Emergency Communication System",
         description:
@@ -158,9 +191,9 @@ export const work: WorkEntry[] = [
         kind: "project",
     },
     {
-        title: "Time-of-Day Classification — Multimodal ML",
+        title: "Time-of-Day Classification — Multimodal ML Evaluation Study",
         description:
-            "A multimodal time-of-day classifier (morning/afternoon/evening) comparing three approaches: a KNN baseline on handcrafted colour features, a CNN using EfficientNetV2-L transfer learning at 87.4% test accuracy, and a RoBERTa transformer over text descriptions at 76.4%. Improved overall F1-score by 12% over the KNN baseline.",
+            "A controlled comparison of three approaches to one task: a KNN baseline on handcrafted colour features, an EfficientNetV2-L transfer-learning CNN at 87.4% test accuracy, and a RoBERTa text classifier at 76.4%. The dataset was hand-labelled and quality-reviewed against a consistent labelling standard; each model was scored with accuracy, F1 and confusion matrices on an imbalanced set, with per-class failure modes diagnosed and F1 improved by 12% over the baseline through partial fine-tuning, augmentation and early stopping.",
         techs: ["Python", "TensorFlow", "Keras", "RoBERTa", "EfficientNetV2", "scikit-learn"],
         github: "https://github.com/alaax159",
         linkPending: true,
@@ -209,8 +242,8 @@ export const work: WorkEntry[] = [
     {
         title: "Wathiq — Arabic Fact Verification",
         description:
-            "A retrieval-augmented fact-verification system for Arabic claims, classifying each as Supported, Refuted or Not Enough Info. Compares a BM25 lexical baseline against a dense AraBERT bi-encoder trained with contrastive learning for evidence retrieval, then TF-IDF with logistic regression against a fine-tuned AraBERT/MARBERT cross-encoder for the verdict. Trained on the AraFacts and Arabic News Stance datasets.",
-        techs: ["Python", "PyTorch", "AraBERT", "MARBERT", "FAISS", "BM25"],
+            "A retrieval-augmented fact-verification pipeline for Arabic claims, classifying each as Supported, Refuted or Not Enough Info, trained on the AraFacts and Arabic News Stance datasets. Model outputs were compared side by side across retrieval and verdict variants, inspecting per-claim differences rather than aggregate scores alone: BM25 (test R@20 0.98, MRR 0.83) against a dense AraBERT bi-encoder with in-batch contrastive negatives, and TF-IDF with logistic regression against an AraBERT/MARBERT cross-encoder.",
+        techs: ["Python", "PyTorch", "HuggingFace Transformers", "AraBERT", "MARBERT", "FAISS", "BM25"],
         github: "https://github.com/alaax159/Wathiq-Retrieval-Augmented-Fact-Verification-for-Arabic-Claims-NLP-Project-",
         kind: "coursework",
     },

@@ -12,15 +12,16 @@ const About: React.FC = () => {
                     <p>
                         I am a <span className="highlight">Computer Engineering</span> student at{' '}
                         <span className="highlight">Birzeit University</span> with a GPA of{' '}
-                        <span className="highlight">82.9%</span>. I have a strong foundation in software development,
-                        machine learning, and computer architecture.
+                        <span className="highlight">82.9%</span>, graduating in 2027. I have a strong foundation in
+                        software development, machine learning, and computer architecture.
                     </p>
                     <p>
-                        I completed an{' '}
-                        <span className="highlight">AI Programming with Python Nanodegree</span> from{' '}
-                        <span className="highlight">Udacity</span>, where I built deep learning image classifiers
-                        using TensorFlow. I also trained in Front-End Development at{' '}
-                        <span className="highlight">The Hope International Company</span>.
+                        Most recently I spent a summer as an{' '}
+                        <span className="highlight">AI Engineer intern at ASAL Technologies</span>, where I built a{' '}
+                        <span className="highlight">RAG pipeline over FDA drug labels</span> — including the grounding
+                        guardrails that validate every answer against its cited source — and the{' '}
+                        <span className="highlight">NestJS</span> backend behind it. I also hold two{' '}
+                        <span className="highlight">Udacity machine learning nanodegrees</span>.
                     </p>
                     <p>Here are some technologies I have been working with:</p>
 
@@ -33,6 +34,9 @@ const About: React.FC = () => {
                     <p className="about-hobbies">
                         Outside of coding, I enjoy exploring new tech, working on hardware projects,
                         and constantly expanding my knowledge in AI and systems engineering.
+                    </p>
+                    <p className="about-hobbies">
+                        Languages: {personalInfo.languages}
                     </p>
                 </div>
 
