@@ -14,6 +14,8 @@
   --white: #e6f1ff;
   --green: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.1);
+  --nav-bg: rgba(10, 25, 47, 0.85);
+  --image-overlay: rgba(100, 255, 218, 0.15);
 
   --font-sans: 'Inter', 'Calibre', -apple-system, system-ui, sans-serif;
   --font-mono: 'Fira Code', 'SF Mono', 'Consolas', monospace;
@@ -154,7 +156,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: var(--transition);
@@ -474,7 +476,7 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  background-color: rgba(100, 255, 218, 0.15);
+  background-color: var(--image-overlay);
   transition: var(--transition);
 }
 
@@ -1378,6 +1380,8 @@ button {
   --white: #fff3d0;
   --green: #ffb000;
   --green-tint: rgba(255, 176, 0, 0.12);
+  --nav-bg: rgba(20, 12, 2, 0.85);
+  --image-overlay: rgba(255, 176, 0, 0.15);
 }
 
 .arcade-scanlines {
