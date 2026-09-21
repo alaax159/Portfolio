@@ -1313,3 +1313,137 @@ button {
     margin-top: 12px;
   }
 }
+
+/* ══════════════════════════════════════════════
+   PLAYING — personal interest, kept below the work
+   ══════════════════════════════════════════════ */
+.playing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.playing-card {
+  position: relative;
+  padding: 28px 25px 25px;
+  background-color: var(--light-navy);
+  border: 1px solid var(--lightest-navy);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.playing-card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+}
+
+.playing-tag {
+  position: absolute;
+  top: -9px;
+  left: 20px;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xxs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background-color: var(--green);
+  border-radius: 2px;
+}
+
+.playing-title {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xl);
+  color: var(--lightest-slate);
+}
+
+.playing-note {
+  font-size: var(--fs-sm);
+  color: var(--slate);
+}
+
+/* ══════════════════════════════════════════════
+   ARCADE MODE — Konami code easter egg
+   Redefining the tokens repaints the whole site.
+   ══════════════════════════════════════════════ */
+:root.arcade {
+  --navy: #140c02;
+  --light-navy: #1f1305;
+  --lightest-navy: #4a2e0b;
+  --dark-slate: #8a6a1e;
+  --slate: #c9a227;
+  --light-slate: #e0bb46;
+  --lightest-slate: #ffd76a;
+  --white: #fff3d0;
+  --green: #ffb000;
+  --green-tint: rgba(255, 176, 0, 0.12);
+}
+
+.arcade-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0,
+    rgba(0, 0, 0, 0.28) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.arcade-coin {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background-color: var(--green);
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.arcade-coin-text {
+  font-weight: 700;
+  animation: arcade-blink 1s steps(1, end) infinite;
+}
+
+.arcade-coin-hint {
+  font-size: var(--fs-xxs);
+  opacity: 0.75;
+  letter-spacing: 1px;
+}
+
+@keyframes arcade-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arcade-coin-text {
+    animation: none;
+  }
+}
+
+/* This heading is longer than the others; let it wrap rather than clip. */
+.playing-section .section-heading {
+  white-space: normal;
+}

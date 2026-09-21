@@ -7,6 +7,8 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Coursework from './components/Coursework';
+import Playing from './components/Playing';
+import ArcadeMode from './components/ArcadeMode';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { personalInfo } from './data/portfolioData';
@@ -32,6 +34,7 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar />
+      <ArcadeMode />
 
       {/* Side decorations — desktop only */}
       <div className="side-element side-left">
@@ -56,6 +59,7 @@ const App: React.FC = () => {
         <Certifications />
         <Projects />
         <Coursework />
+        <Playing />
         <Contact />
       </main>
 
