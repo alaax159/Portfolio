@@ -41,11 +41,6 @@ export interface Education {
     note?: string;
 }
 
-export interface Game {
-    title: string;
-    note: string;
-}
-
 // ── Personal Info ──────────────────────────────
 export const personalInfo = {
     name: "Alaa Emad Faraj",
@@ -151,16 +146,6 @@ export const education: Education[] = [
         degree: "Secondary School Certificate",
         date: "2022",
         note: "Score: 90.9%",
-    },
-];
-
-// ── Playing ────────────────────────────────────
-// Personal interest, not Work. Kept short on purpose: it sits below
-// everything a Screener came for.
-export const games: Game[] = [
-    {
-        title: "Elden Ring",
-        note: "An open world that explains nothing and expects you to work it out. What I like about it is what I like about a hard bug: the answer was there the whole time, I just hadn't looked properly yet.",
     },
 ];
 

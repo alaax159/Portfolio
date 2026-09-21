@@ -7,7 +7,6 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Coursework from './components/Coursework';
-import Playing from './components/Playing';
 import ArcadeMode from './components/ArcadeMode';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -59,7 +58,6 @@ const App: React.FC = () => {
         <Certifications />
         <Projects />
         <Coursework />
-        <Playing />
         <Contact />
       </main>
 

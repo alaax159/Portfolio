@@ -1314,57 +1314,8 @@ button {
     margin-left: 0;
     margin-top: 12px;
   }
-}
 
-/* ══════════════════════════════════════════════
-   PLAYING — personal interest, kept below the work
-   ══════════════════════════════════════════════ */
-.playing-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
 }
-
-.playing-card {
-  position: relative;
-  padding: 28px 25px 25px;
-  background-color: var(--light-navy);
-  border: 1px solid var(--lightest-navy);
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-.playing-card:hover {
-  border-color: var(--green);
-  transform: translateY(-4px);
-}
-
-.playing-tag {
-  position: absolute;
-  top: -9px;
-  left: 20px;
-  padding: 2px 8px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xxs);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--navy);
-  background-color: var(--green);
-  border-radius: 2px;
-}
-
-.playing-title {
-  margin-bottom: 12px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xl);
-  color: var(--lightest-slate);
-}
-
-.playing-note {
-  font-size: var(--fs-sm);
-  color: var(--slate);
-}
-
 /* ══════════════════════════════════════════════
    ARCADE MODE — Konami code easter egg
    Redefining the tokens repaints the whole site.
@@ -1445,11 +1396,6 @@ button {
   .arcade-coin-text {
     animation: none;
   }
-}
-
-/* This heading is longer than the others; let it wrap rather than clip. */
-.playing-section .section-heading {
-  white-space: normal;
 }
 
 /* The portrait's tint is baked into the canvas draw, so it can't follow
